@@ -7,7 +7,7 @@ from typing import Optional
 from gym.utils import seeding
 
 '''
-Environment for M4O-PO
+Environment for M4O-PO (OPT-PO)
 '''
 class M4OEnv(gym.Env):
     def __init__(self, one_data):
