@@ -3,7 +3,7 @@ import gym
 from gym import spaces
 
 '''
-Environment for M4O-BO
+Environment for M4O-BO (OPT-BO)
 '''
 class M4OEnv(gym.Env):
     def __init__(self,one_data):
