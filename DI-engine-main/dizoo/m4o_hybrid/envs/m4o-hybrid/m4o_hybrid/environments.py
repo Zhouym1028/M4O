@@ -781,11 +781,11 @@ class M4OEnv(gym.Env):
                 if self.array_l[0][2] >= self.array_l_2_0[0]:
                     c3_trans_0 += (t1_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_0[2] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[0][2] ** self.trans_loss) * self.noise)))
                 else:
                     if self.arr_index_0_to_j[0] < 3:
                         c3_trans_0 += (t1_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_0[self.arr_index_0_to_j[
+                            1 + self.trans_power / ((self.array_S[0][self.arr_index_0_to_j[
                                                                         0] - 1] ** self.trans_loss) * self.noise))) + (
                                               t1_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -793,7 +793,7 @@ class M4OEnv(gym.Env):
                     else:
                         c3_trans_0 += (t1_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
-                                    (self.array_S_0[
+                                    (self.array_S[0][
                                          self.arr_index_0_to_j[0] - 1] ** self.trans_loss) * self.noise))) + (
                                               t1_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -816,12 +816,12 @@ class M4OEnv(gym.Env):
                 if self.array_l[1][2] >= self.array_l_2_1[0]:
                     c3_trans_1 += (t2_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_1[2] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[1][2] ** self.trans_loss) * self.noise)))
                 else:
                     if 0 < self.arr_index_1_to_j[0] < 3:
                         c3_trans_1 += (t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
-                                    (self.array_S_1[
+                                    (self.array_S[1][
                                          self.arr_index_1_to_j[0] - 1] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -829,14 +829,14 @@ class M4OEnv(gym.Env):
                     elif self.arr_index_1_to_j[0] == 0:
                         c3_trans_1 += (t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
-                                    (self.array_S_1[self.arr_index_1_to_j[0]] ** self.trans_loss) * self.noise))) + (
+                                    (self.array_S[1][self.arr_index_1_to_j[0]] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                     (self.array_S[self.arr_index_1_to_j[0]][2] ** self.trans_loss) * self.noise)))
                     else:
                         c3_trans_1 += (t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
-                                    (self.array_S_1[
+                                    (self.array_S[1][
                                          self.arr_index_1_to_j[0] - 1] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -859,19 +859,19 @@ class M4OEnv(gym.Env):
                 if self.array_l[2][2] >= self.array_l_2_2[0]:
                     c3_trans_2 += (t3_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_2[2] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[2][2] ** self.trans_loss) * self.noise)))
                 else:
                     if self.arr_index_2_to_j[0] < 3:
                         c3_trans_2 += (t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
-                                    (self.array_S_2[self.arr_index_2_to_j[0]] ** self.trans_loss) * self.noise))) + (
+                                    (self.array_S[2][self.arr_index_2_to_j[0]] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                     (self.array_S[self.arr_index_2_to_j[0]][2] ** self.trans_loss) * self.noise)))
                     else:
                         c3_trans_2 += (t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
-                                    (self.array_S_2[
+                                    (self.array_S[2][
                                          self.arr_index_2_to_j[0] - 1] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -898,12 +898,12 @@ class M4OEnv(gym.Env):
                 if self.array_l[0][3] >= self.array_l_2_0[1]:
                     c4_trans_0 += (t1_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_0[3] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[0][3] ** self.trans_loss) * self.noise)))
                 else:
                     if self.arr_index_0_to_j[1] < 4:
                         c4_trans_0 += (t1_s / self.intensity) / (
                                 self.bandWith * np.log2(1 + self.trans_power / (
-                                (self.array_S_0[self.arr_index_0_to_j[1] - 1] ** self.trans_loss) * self.noise))) + (
+                                (self.array_S[0][self.arr_index_0_to_j[1] - 1] ** self.trans_loss) * self.noise))) + (
                                               t1_s / self.intensity) / (
                                               self.bandWith * np.log2(1 + self.trans_power / (
                                               (self.array_S[self.arr_index_0_to_j[1]][
@@ -911,7 +911,7 @@ class M4OEnv(gym.Env):
                     else:
                         c4_trans_0 += (t1_s / self.intensity) / (
                                 self.bandWith * np.log2(1 + self.trans_power / (
-                                (self.array_S_0[self.arr_index_0_to_j[1] - 1] ** self.trans_loss) * self.noise))) + (
+                                (self.array_S[0][self.arr_index_0_to_j[1] - 1] ** self.trans_loss) * self.noise))) + (
                                               t1_s / self.intensity) / (
                                               self.bandWith * np.log2(1 + self.trans_power / (
                                               (self.array_S[self.arr_index_0_to_j[1]][
@@ -932,12 +932,12 @@ class M4OEnv(gym.Env):
                 if self.array_l[1][3] >= self.array_l_2_1[1]:
                     c4_trans_1 += (t2_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_1[3] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[1][3] ** self.trans_loss) * self.noise)))
                 else:
                     if 0 < self.arr_index_1_to_j[1] < 4:
                         c4_trans_1 += (t2_s / self.intensity) / (
                                 self.bandWith * np.log2(1 + self.trans_power / (
-                                (self.array_S_1[self.arr_index_1_to_j[1] - 1] ** self.trans_loss) * self.noise))) + (
+                                (self.array_S[1][self.arr_index_1_to_j[1] - 1] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (
                                               self.bandWith * np.log2(1 + self.trans_power / (
                                               (self.array_S[self.arr_index_1_to_j[1]][
@@ -945,7 +945,7 @@ class M4OEnv(gym.Env):
                     elif self.arr_index_1_to_j[1] == 0:
                         c4_trans_1 += (t2_s / self.intensity) / (
                                 self.bandWith * np.log2(1 + self.trans_power / (
-                                (self.array_S_1[self.arr_index_1_to_j[1]] ** self.trans_loss) * self.noise))) + (
+                                (self.array_S[1][self.arr_index_1_to_j[1]] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (
                                               self.bandWith * np.log2(1 + self.trans_power / (
                                               (self.array_S[self.arr_index_1_to_j[1]][
@@ -953,7 +953,7 @@ class M4OEnv(gym.Env):
                     else:
                         c4_trans_1 += (t2_s / self.intensity) / (
                                 self.bandWith * np.log2(1 + self.trans_power / (
-                                (self.array_S_1[self.arr_index_1_to_j[1] - 1] ** self.trans_loss) * self.noise))) + (
+                                (self.array_S[1][self.arr_index_1_to_j[1] - 1] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (
                                               self.bandWith * np.log2(1 + self.trans_power / (
                                               (self.array_S[self.arr_index_1_to_j[1]][
@@ -974,12 +974,12 @@ class M4OEnv(gym.Env):
                 if self.array_l[2][3] >= self.array_l_2_2[1]:
                     c4_trans_2 += (t3_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_2[3] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[2][3] ** self.trans_loss) * self.noise)))
                 else:
                     if 2 < self.arr_index_2_to_j[1] < 4:
                         c4_trans_2 += (t3_s / self.intensity) / (
                                 self.bandWith * np.log2(1 + self.trans_power / (
-                                (self.array_S_2[self.arr_index_2_to_j[1] - 1] ** self.trans_loss) * self.noise))) + (
+                                (self.array_S[2][self.arr_index_2_to_j[1] - 1] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (
                                               self.bandWith * np.log2(1 + self.trans_power / (
                                               (self.array_S[self.arr_index_2_to_j[1]][
@@ -987,7 +987,7 @@ class M4OEnv(gym.Env):
                     elif self.arr_index_2_to_j[1] < 2:
                         c4_trans_2 += (t3_s / self.intensity) / (
                                 self.bandWith * np.log2(1 + self.trans_power / (
-                                (self.array_S_2[self.arr_index_2_to_j[1]] ** self.trans_loss) * self.noise))) + (
+                                (self.array_S[2][self.arr_index_2_to_j[1]] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (
                                               self.bandWith * np.log2(1 + self.trans_power / (
                                               (self.array_S[self.arr_index_2_to_j[1]][
@@ -995,7 +995,7 @@ class M4OEnv(gym.Env):
                     else:
                         c4_trans_2 += (t3_s / self.intensity) / (
                                 self.bandWith * np.log2(1 + self.trans_power / (
-                                (self.array_S_2[self.arr_index_2_to_j[1] - 1] ** self.trans_loss) * self.noise))) + (
+                                (self.array_S[2][self.arr_index_2_to_j[1] - 1] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (
                                               self.bandWith * np.log2(1 + self.trans_power / (
                                               (self.array_S[self.arr_index_2_to_j[1]][
@@ -1021,11 +1021,11 @@ class M4OEnv(gym.Env):
                 if self.array_l[0][4] >= self.array_l_2_0[2]:
                     c5_trans_0 += (t1_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_0[4] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[0][4] ** self.trans_loss) * self.noise)))
                 else:
                     if self.arr_index_0_to_j[2] < 5:
                         c5_trans_0 += (t1_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_0[self.arr_index_0_to_j[
+                            1 + self.trans_power / ((self.array_S[0][self.arr_index_0_to_j[
                                                                         2] - 1] ** self.trans_loss) * self.noise))) + (
                                               t1_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -1033,7 +1033,7 @@ class M4OEnv(gym.Env):
                     else:
                         c5_trans_0 += (t1_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
-                                    (self.array_S_0[
+                                    (self.array_S[0][
                                          self.arr_index_0_to_j[2] - 1] ** self.trans_loss) * self.noise))) + (
                                               t1_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -1054,12 +1054,12 @@ class M4OEnv(gym.Env):
                 if self.array_l[1][4] >= self.array_l_2_1[2]:
                     c5_trans_1 += (t2_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_1[4] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[1][4] ** self.trans_loss) * self.noise)))
                 else:
                     if 0 < self.arr_index_1_to_j[2] < 5:
                         c5_trans_1 += (t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
-                                    (self.array_S_1[
+                                    (self.array_S[1][
                                          self.arr_index_1_to_j[2] - 1] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -1067,14 +1067,14 @@ class M4OEnv(gym.Env):
                     elif self.arr_index_1_to_j[2] == 0:
                         c5_trans_1 += (t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
-                                    (self.array_S_1[self.arr_index_1_to_j[2]] ** self.trans_loss) * self.noise))) + (
+                                    (self.array_S[1][self.arr_index_1_to_j[2]] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                     (self.array_S[self.arr_index_1_to_j[2]][4] ** self.trans_loss) * self.noise)))
                     else:
                         c5_trans_1 += (t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
-                                    (self.array_S_1[
+                                    (self.array_S[1][
                                          self.arr_index_1_to_j[2] - 1] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -1095,12 +1095,12 @@ class M4OEnv(gym.Env):
                 if self.array_l[2][4] >= self.array_l_2_2[2]:
                     c5_trans_2 += (t3_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_2[4] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[2][4] ** self.trans_loss) * self.noise)))
                 else:
                     if 2 < self.arr_index_2_to_j[2] < 5:
                         c5_trans_2 += (t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
-                                    (self.array_S_2[
+                                    (self.array_S[2][
                                          self.arr_index_2_to_j[2] - 1] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -1108,14 +1108,14 @@ class M4OEnv(gym.Env):
                     elif self.arr_index_2_to_j[2] < 2:
                         c5_trans_2 += (t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
-                                    (self.array_S_2[self.arr_index_2_to_j[2]] ** self.trans_loss) * self.noise))) + (
+                                    (self.array_S[2][self.arr_index_2_to_j[2]] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                     (self.array_S[self.arr_index_2_to_j[2]][4] ** self.trans_loss) * self.noise)))
                     else:
                         c5_trans_2 += (t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
-                                    (self.array_S_2[
+                                    (self.array_S[2][
                                          self.arr_index_2_to_j[2] - 1] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -1141,18 +1141,18 @@ class M4OEnv(gym.Env):
                 if self.array_l[0][5] >= self.array_l_2_0[3]:
                     c6_trans_0 += (t1_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_0[5] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[0][5] ** self.trans_loss) * self.noise)))
                 else:
                     if self.arr_index_0_to_j[3] < 6:
                         c6_trans_0 += (t1_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_0[self.arr_index_0_to_j[
+                            1 + self.trans_power / ((self.array_S[0][self.arr_index_0_to_j[
                                                                         3] - 1] ** self.trans_loss) * self.noise))) + (
                                               t1_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                         (self.array_S[self.arr_index_0_to_j[3]][5] ** self.trans_loss) * self.noise)))
                     else:
                         c6_trans_0 += (t1_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_0[self.arr_index_0_to_j[
+                            1 + self.trans_power / ((self.array_S[0][self.arr_index_0_to_j[
                                                                         3] - 1] ** self.trans_loss) * self.noise))) + (
                                               t1_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -1173,25 +1173,25 @@ class M4OEnv(gym.Env):
                 if self.array_l[1][5] >= self.array_l_2_1[3]:
                     c6_trans_1 += (t2_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_1[5] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[1][5] ** self.trans_loss) * self.noise)))
                 else:
                     if 0 < self.arr_index_1_to_j[3] < 6:
                         c6_trans_1 += (t2_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_1[self.arr_index_1_to_j[
+                            1 + self.trans_power / ((self.array_S[1][self.arr_index_1_to_j[
                                                                         3] - 1] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                         (self.array_S[self.arr_index_1_to_j[3]][5] ** self.trans_loss) * self.noise)))
                     elif self.arr_index_1_to_j[3] == 0:
                         c6_trans_1 += (t2_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_1[self.arr_index_1_to_j[
+                            1 + self.trans_power / ((self.array_S[1][self.arr_index_1_to_j[
                                 3]] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                         (self.array_S[self.arr_index_1_to_j[3]][5] ** self.trans_loss) * self.noise)))
                     else:
                         c6_trans_1 += (t2_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_1[self.arr_index_1_to_j[
+                            1 + self.trans_power / ((self.array_S[1][self.arr_index_1_to_j[
                                                                         3] - 1] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -1212,25 +1212,25 @@ class M4OEnv(gym.Env):
                 if self.array_l[2][5] >= self.array_l_2_2[3]:
                     c6_trans_2 += (t3_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_2[5] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[2][5] ** self.trans_loss) * self.noise)))
                 else:
                     if 2 < self.arr_index_2_to_j[3] < 6:
                         c6_trans_2 += (t3_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_2[self.arr_index_2_to_j[
+                            1 + self.trans_power / ((self.array_S[2][self.arr_index_2_to_j[
                                                                         3] - 1] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                         (self.array_S[self.arr_index_2_to_j[3]][5] ** self.trans_loss) * self.noise)))
                     elif self.arr_index_2_to_j[3] < 2:
                         c6_trans_2 += (t3_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_2[self.arr_index_2_to_j[
+                            1 + self.trans_power / ((self.array_S[2][self.arr_index_2_to_j[
                                 3]] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                         (self.array_S[self.arr_index_2_to_j[3]][5] ** self.trans_loss) * self.noise)))
                     else:
                         c6_trans_2 += (t3_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_2[self.arr_index_2_to_j[
+                            1 + self.trans_power / ((self.array_S[2][self.arr_index_2_to_j[
                                                                         3] - 1] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -1256,18 +1256,18 @@ class M4OEnv(gym.Env):
                 if self.array_l[0][6] >= self.array_l_2_0[4]:
                     c7_trans_0 += (t1_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_0[6] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[0][6] ** self.trans_loss) * self.noise)))
                 else:
                     if self.arr_index_0_to_j[4] < 7:
                         c7_trans_0 += (t1_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_0[self.arr_index_0_to_j[
+                            1 + self.trans_power / ((self.array_S[0][self.arr_index_0_to_j[
                                                                         4] - 1] ** self.trans_loss) * self.noise))) + (
                                               t1_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                         (self.array_S[self.arr_index_0_to_j[4]][6] ** self.trans_loss) * self.noise)))
                     else:
                         c7_trans_0 += (t1_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_0[self.arr_index_0_to_j[
+                            1 + self.trans_power / ((self.array_S[0][self.arr_index_0_to_j[
                                                                         4] - 1] ** self.trans_loss) * self.noise))) + (
                                               t1_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -1288,25 +1288,25 @@ class M4OEnv(gym.Env):
                 if self.array_l[1][6] >= self.array_l_2_1[4]:
                     c7_trans_1 += (t2_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_1[6] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[1][6] ** self.trans_loss) * self.noise)))
                 else:
                     if 0 < self.arr_index_1_to_j[4] < 7:
                         c7_trans_1 += (t2_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_1[self.arr_index_1_to_j[
+                            1 + self.trans_power / ((self.array_S[1][self.arr_index_1_to_j[
                                                                         4] - 1] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                         (self.array_S[self.arr_index_1_to_j[4]][6] ** self.trans_loss) * self.noise)))
                     elif self.arr_index_1_to_j[4] == 0:
                         c7_trans_1 += (t2_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_1[self.arr_index_1_to_j[
+                            1 + self.trans_power / ((self.array_S[1][self.arr_index_1_to_j[
                                 4]] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                         (self.array_S[self.arr_index_1_to_j[4]][6] ** self.trans_loss) * self.noise)))
                     else:
                         c7_trans_1 += (t2_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_1[self.arr_index_1_to_j[
+                            1 + self.trans_power / ((self.array_S[1][self.arr_index_1_to_j[
                                                                         4] - 1] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -1327,25 +1327,25 @@ class M4OEnv(gym.Env):
                 if self.array_l[2][6] >= self.array_l_2_2[4]:
                     c7_trans_2 += (t3_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_2[6] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[2][6] ** self.trans_loss) * self.noise)))
                 else:
                     if 2 < self.arr_index_2_to_j[4] < 7:
                         c7_trans_2 += (t3_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_2[self.arr_index_2_to_j[
+                            1 + self.trans_power / ((self.array_S[2][self.arr_index_2_to_j[
                                                                         4] - 1] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                         (self.array_S[self.arr_index_2_to_j[4]][6] ** self.trans_loss) * self.noise)))
                     elif self.arr_index_2_to_j[4] < 2:
                         c7_trans_2 += (t3_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_2[self.arr_index_2_to_j[
+                            1 + self.trans_power / ((self.array_S[2][self.arr_index_2_to_j[
                                 4]] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                         (self.array_S[self.arr_index_2_to_j[4]][6] ** self.trans_loss) * self.noise)))
                     else:
                         c7_trans_2 += (t3_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_2[self.arr_index_2_to_j[
+                            1 + self.trans_power / ((self.array_S[2][self.arr_index_2_to_j[
                                                                         4] - 1] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -1371,18 +1371,18 @@ class M4OEnv(gym.Env):
                 if self.array_l[0][7] >= self.array_l_2_0[5]:
                     c8_trans_0 += (t1_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_0[7] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[0][7] ** self.trans_loss) * self.noise)))
                 else:
                     if self.arr_index_0_to_j[5] < 8:
                         c8_trans_0 += (t1_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_0[self.arr_index_0_to_j[
+                            1 + self.trans_power / ((self.array_S[0][self.arr_index_0_to_j[
                                                                         5] - 1] ** self.trans_loss) * self.noise))) + (
                                               t1_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                         (self.array_S[self.arr_index_0_to_j[5]][7] ** self.trans_loss) * self.noise)))
                     else:
                         c8_trans_0 += (t1_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_0[self.arr_index_0_to_j[
+                            1 + self.trans_power / ((self.array_S[0][self.arr_index_0_to_j[
                                                                         5] - 1] ** self.trans_loss) * self.noise))) + (
                                               t1_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -1403,25 +1403,25 @@ class M4OEnv(gym.Env):
                 if self.array_l[1][7] >= self.array_l_2_1[5]:
                     c8_trans_1 += (t2_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_1[7] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[1][7] ** self.trans_loss) * self.noise)))
                 else:
                     if 0 < self.arr_index_1_to_j[5] < 8:
                         c8_trans_1 += (t2_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_1[self.arr_index_1_to_j[
+                            1 + self.trans_power / ((self.array_S[1][self.arr_index_1_to_j[
                                                                         5] - 1] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                         (self.array_S[self.arr_index_1_to_j[5]][7] ** self.trans_loss) * self.noise)))
                     elif self.arr_index_1_to_j[5] == 0:
                         c8_trans_1 += (t2_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_1[self.arr_index_1_to_j[
+                            1 + self.trans_power / ((self.array_S[1][self.arr_index_1_to_j[
                                 5]] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                         (self.array_S[self.arr_index_1_to_j[5]][7] ** self.trans_loss) * self.noise)))
                     else:
                         c8_trans_1 += (t2_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_1[self.arr_index_1_to_j[
+                            1 + self.trans_power / ((self.array_S[1][self.arr_index_1_to_j[
                                                                         5] - 1] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -1442,25 +1442,25 @@ class M4OEnv(gym.Env):
                 if self.array_l[2][7] >= self.array_l_2_2[5]:
                     c8_trans_2 += (t3_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_2[7] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[2][7] ** self.trans_loss) * self.noise)))
                 else:
                     if 2 < self.arr_index_2_to_j[5] < 8:
                         c8_trans_2 += (t3_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_2[self.arr_index_2_to_j[
+                            1 + self.trans_power / ((self.array_S[2][self.arr_index_2_to_j[
                                                                         5] - 1] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                         (self.array_S[self.arr_index_2_to_j[5]][7] ** self.trans_loss) * self.noise)))
                     elif self.arr_index_2_to_j[5] < 2:
                         c8_trans_2 += (t3_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_2[self.arr_index_2_to_j[
+                            1 + self.trans_power / ((self.array_S[2][self.arr_index_2_to_j[
                                 5]] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                         (self.array_S[self.arr_index_2_to_j[5]][7] ** self.trans_loss) * self.noise)))
                     else:
                         c8_trans_2 += (t3_s / self.intensity) / (self.bandWith * np.log2(
-                            1 + self.trans_power / ((self.array_S_2[self.arr_index_2_to_j[
+                            1 + self.trans_power / ((self.array_S[2][self.arr_index_2_to_j[
                                                                         5] - 1] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -1486,10 +1486,10 @@ class M4OEnv(gym.Env):
                 if self.array_l[0][8] >= self.array_l_2_0[6]:
                     c9_trans_0 += (t1_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_0[8] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[0][8] ** self.trans_loss) * self.noise)))
                 else:
                     c9_trans_0 += (t1_s / self.intensity) / (self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_0[self.arr_index_0_to_j[
+                        1 + self.trans_power / ((self.array_S[0][self.arr_index_0_to_j[
                                                                     6] - 1] ** self.trans_loss) * self.noise))) + (
                                           t1_s / self.intensity) / (self.bandWith * np.log2(
                         1 + self.trans_power / (
@@ -1510,12 +1510,12 @@ class M4OEnv(gym.Env):
                 if self.array_l[1][7] >= self.array_l_2_1[5]:
                     c9_trans_1 += (t2_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_1[7] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[1][7] ** self.trans_loss) * self.noise)))
                 else:
                     if 0 < self.arr_index_1_to_j[6] < 9:
                         c9_trans_1 += (t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
-                                    (self.array_S_1[
+                                    (self.array_S[1][
                                          self.arr_index_1_to_j[6] - 1] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -1523,7 +1523,7 @@ class M4OEnv(gym.Env):
                     elif self.arr_index_1_to_j[6] == 0:
                         c9_trans_1 += (t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
-                                    (self.array_S_1[self.arr_index_1_to_j[6]] ** self.trans_loss) * self.noise))) + (
+                                    (self.array_S[1][self.arr_index_1_to_j[6]] ** self.trans_loss) * self.noise))) + (
                                               t2_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                     (self.array_S[self.arr_index_1_to_j[6]][8] ** self.trans_loss) * self.noise)))
@@ -1543,12 +1543,12 @@ class M4OEnv(gym.Env):
                 if self.array_l[2][8] >= self.array_l_2_2[6]:
                     c9_trans_2 += (t3_s / self.intensity) / (
                             self.bandWith * np.log2(
-                        1 + self.trans_power / ((self.array_S_2[8] ** self.trans_loss) * self.noise)))
+                        1 + self.trans_power / ((self.array_S[2][8] ** self.trans_loss) * self.noise)))
                 else:
                     if 2 < self.arr_index_2_to_j[6] < 9:
                         c9_trans_2 += (t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
-                                    (self.array_S_2[
+                                    (self.array_S[2][
                                          self.arr_index_2_to_j[6] - 1] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
@@ -1556,7 +1556,7 @@ class M4OEnv(gym.Env):
                     elif self.arr_index_2_to_j[6] < 2:
                         c9_trans_2 += (t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
-                                    (self.array_S_2[self.arr_index_2_to_j[6]] ** self.trans_loss) * self.noise))) + (
+                                    (self.array_S[2][self.arr_index_2_to_j[6]] ** self.trans_loss) * self.noise))) + (
                                               t3_s / self.intensity) / (self.bandWith * np.log2(
                             1 + self.trans_power / (
                                     (self.array_S[self.arr_index_2_to_j[6]][8] ** self.trans_loss) * self.noise)))
@@ -2334,7 +2334,7 @@ class M4OEnv(gym.Env):
                 c3_task_0 += t1_s
                 c3_trans_0 += (t1_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_0[2] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[0][2] ** self.trans_loss) * self.noise)))
                 c3_exe_0 += c3_task_0 / c3
                 c3_delay_0 += c3_trans_0 + c3_exe_0
                 if c3_delay_0 > self.Array_l_0[0]:
@@ -2350,7 +2350,7 @@ class M4OEnv(gym.Env):
                 c3_task_1 += t2_s
                 c3_trans_1 += (t2_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_1[2] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[1][2] ** self.trans_loss) * self.noise)))
                 c3_exe_1 += c3_task_1 / c3
                 c3_delay_1 += c3_trans_1 + c3_exe_1
                 if c3_delay_1 > self.Array_l_1[0]:
@@ -2366,7 +2366,7 @@ class M4OEnv(gym.Env):
                 c3_task_2 += t3_s
                 c3_trans_2 += (t3_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_2[2] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[2][2] ** self.trans_loss) * self.noise)))
                 c3_exe_2 += c3_task_2 / c3
                 c3_delay_2 += c3_trans_2 + c3_exe_2
                 if c3_delay_2 > self.Array_l_2[0]:
@@ -2387,7 +2387,7 @@ class M4OEnv(gym.Env):
                 c4_task_0 += t1_s
                 c4_trans_0 += (t1_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_0[3] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[0][3] ** self.trans_loss) * self.noise)))
                 c4_exe_0 += c4_task_0 / c4
                 c4_delay_0 += c4_trans_0 + c4_exe_0
                 if c4_delay_0 > self.Array_l_0[1]:
@@ -2403,7 +2403,7 @@ class M4OEnv(gym.Env):
                 c4_task_1 += t2_s
                 c4_trans_1 += (t2_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_1[3] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[1][3] ** self.trans_loss) * self.noise)))
                 c4_exe_1 += c4_task_1 / c4
                 c4_delay_1 += c4_trans_1 + c4_exe_1
                 if c4_delay_1 > self.Array_l_1[1]:
@@ -2419,7 +2419,7 @@ class M4OEnv(gym.Env):
                 c4_task_2 += t3_s
                 c4_trans_2 += (t3_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_2[3] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[2][3] ** self.trans_loss) * self.noise)))
                 c4_exe_2 += c4_task_2 / c4
                 c4_delay_2 += c4_trans_2 + c4_exe_2
                 if c4_delay_2 > self.Array_l_2[1]:
@@ -2440,7 +2440,7 @@ class M4OEnv(gym.Env):
                 c5_task_0 += t1_s
                 c5_trans_0 += (t1_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_0[4] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[0][4] ** self.trans_loss) * self.noise)))
                 c5_exe_0 += c5_task_0 / c5
                 c5_delay_0 += c5_trans_0 + c5_exe_0
                 if c5_delay_0 > self.Array_l_0[2]:
@@ -2456,7 +2456,7 @@ class M4OEnv(gym.Env):
                 c5_task_1 += t2_s
                 c5_trans_1 += (t2_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_1[4] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[1][4] ** self.trans_loss) * self.noise)))
                 c5_exe_1 += c5_task_1 / c5
                 c5_delay_1 += c5_trans_1 + c5_exe_1
                 if c5_delay_1 > self.Array_l_1[2]:
@@ -2472,7 +2472,7 @@ class M4OEnv(gym.Env):
                 c5_task_2 += t3_s
                 c5_trans_2 += (t3_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_2[4] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[2][4] ** self.trans_loss) * self.noise)))
                 c5_exe_2 += c5_task_2 / c5
                 c5_delay_2 += c5_trans_2 + c5_exe_2
                 if c5_delay_2 > self.Array_l_2[2]:
@@ -2493,7 +2493,7 @@ class M4OEnv(gym.Env):
                 c6_task_0 += t1_s
                 c6_trans_0 += (t1_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_0[5] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[0][5] ** self.trans_loss) * self.noise)))
                 c6_exe_0 += c6_task_0 / c6
                 c6_delay_0 += c6_trans_0 + c6_exe_0
                 if c6_delay_0 > self.Array_l_0[3]:
@@ -2509,7 +2509,7 @@ class M4OEnv(gym.Env):
                 c6_task_1 += t2_s
                 c6_trans_1 += (t2_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_1[5] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[1][5] ** self.trans_loss) * self.noise)))
                 c6_exe_1 += c6_task_1 / c6
                 c6_delay_1 += c6_trans_1 + c6_exe_1
                 if c6_delay_1 > self.Array_l_1[3]:
@@ -2525,7 +2525,7 @@ class M4OEnv(gym.Env):
                 c6_task_2 += t3_s
                 c6_trans_2 += (t3_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_2[5] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[2][5] ** self.trans_loss) * self.noise)))
                 c6_exe_2 += c6_task_2 / c6
                 c6_delay_2 += c6_trans_2 + c6_exe_2
                 if c6_delay_2 > self.Array_l_2[3]:
@@ -2546,7 +2546,7 @@ class M4OEnv(gym.Env):
                 c7_task_0 += t1_s
                 c7_trans_0 += (t1_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_0[6] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[0][6] ** self.trans_loss) * self.noise)))
                 c7_exe_0 += c7_task_0 / c7
                 c7_delay_0 += c7_trans_0 + c7_exe_0
                 if c7_delay_0 > self.Array_l_0[4]:
@@ -2562,7 +2562,7 @@ class M4OEnv(gym.Env):
                 c7_task_1 += t2_s
                 c7_trans_1 += (t2_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_1[6] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[1][6] ** self.trans_loss) * self.noise)))
                 c7_exe_1 += c7_task_1 / c7
                 c7_delay_1 += c7_trans_1 + c7_exe_1
                 if c7_delay_1 > self.Array_l_1[4]:
@@ -2578,7 +2578,7 @@ class M4OEnv(gym.Env):
                 c7_task_2 += t3_s
                 c7_trans_2 += (t3_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_2[6] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[2][6] ** self.trans_loss) * self.noise)))
                 c7_exe_2 += c7_task_2 / c7
                 c7_delay_2 += c7_trans_2 + c7_exe_2
                 if c7_delay_2 > self.Array_l_2[4]:
@@ -2599,7 +2599,7 @@ class M4OEnv(gym.Env):
                 c8_task_0 += t1_s
                 c8_trans_0 += (t1_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_0[7] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[0][7] ** self.trans_loss) * self.noise)))
                 c8_exe_0 += c8_task_0 / c8
                 c8_delay_0 += c8_trans_0 + c8_exe_0
                 if c8_delay_0 > self.Array_l_0[5]:
@@ -2615,7 +2615,7 @@ class M4OEnv(gym.Env):
                 c8_task_1 += t2_s
                 c8_trans_1 += (t2_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_1[7] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[1][7] ** self.trans_loss) * self.noise)))
                 c8_exe_1 += c8_task_1 / c8
                 c8_delay_1 += c8_trans_1 + c8_exe_1
                 if c8_delay_1 > self.Array_l_1[5]:
@@ -2631,7 +2631,7 @@ class M4OEnv(gym.Env):
                 c8_task_2 += t3_s
                 c8_trans_2 += (t3_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_2[7] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[2][7] ** self.trans_loss) * self.noise)))
                 c8_exe_2 += c8_task_2 / c8
                 c8_delay_2 += c8_trans_2 + c8_exe_2
                 if c8_delay_2 > self.Array_l_2[5]:
@@ -2652,7 +2652,7 @@ class M4OEnv(gym.Env):
                 c9_task_0 += t1_s
                 c9_trans_0 += (t1_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_0[8] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[0][8] ** self.trans_loss) * self.noise)))
                 c9_exe_0 += c9_task_0 / c9
                 c9_delay_0 += c9_trans_0 + c9_exe_0
                 if c9_delay_0 > self.Array_l_0[6]:
@@ -2668,7 +2668,7 @@ class M4OEnv(gym.Env):
                 c9_task_1 += t2_s
                 c9_trans_1 += (t2_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_1[7] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[1][8] ** self.trans_loss) * self.noise)))
                 c9_exe_1 += c9_task_1 / c9
                 c9_delay_1 += c9_trans_1 + c9_exe_1
                 if c9_delay_1 > self.Array_l_1[6]:
@@ -2684,7 +2684,7 @@ class M4OEnv(gym.Env):
                 c9_task_2 += t3_s
                 c9_trans_2 += (t3_s / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S_2[8] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[2][8] ** self.trans_loss) * self.noise)))
                 c9_exe_2 += c9_task_2 / c9
                 c9_delay_2 += c9_trans_2 + c9_exe_2
                 if c9_delay_2 > self.Array_l_2[6]:
