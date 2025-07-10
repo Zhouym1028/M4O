@@ -41,35 +41,10 @@ class M4OEnv(gym.Env):
         self.state = self.data
 
         # computation of connectivity
-        self.array_S_0 = np.zeros(9)
-        self.array_S_1 = np.zeros(9)
-        self.array_S_2 = np.zeros(9)
-        self.array_S_3 = np.zeros(9)
-        self.array_S_4 = np.zeros(9)
-        self.array_S_5 = np.zeros(9)
-        self.array_S_6 = np.zeros(9)
-        self.array_S_7 = np.zeros(9)
-        self.array_S_8 = np.zeros(9)
-        self.array_S_9 = np.zeros(9)
-
-        self.array_l_0 = np.zeros(9)
-        self.array_l_1 = np.zeros(9)
-        self.array_l_2 = np.zeros(9)
-        self.array_l_3 = np.zeros(9)
-        self.array_l_4 = np.zeros(9)
-        self.array_l_5 = np.zeros(9)
-        self.array_l_6 = np.zeros(9)
-        self.array_l_7 = np.zeros(9)
-        self.array_l_8 = np.zeros(9)
-        self.array_l_9 = np.zeros(9)
-
-        self.array_S = [self.array_S_0, self.array_S_1, self.array_S_2, self.array_S_3, self.array_S_4,
-                        self.array_S_5, self.array_S_6, self.array_S_7, self.array_S_8, self.array_S_9]
-        self.array_l = [self.array_l_0, self.array_l_1, self.array_l_2, self.array_l_3, self.array_l_4,
-                        self.array_l_5, self.array_l_6, self.array_l_7, self.array_l_8, self.array_l_9]
+        self.array_S = [np.zeros(9) for _ in range(10)]
+        self.array_l = [np.zeros(9) for _ in range(10)]
 
         for j in range(17, 27):
-
             for i in range(j+1,27):
                 if np.sqrt((self.state[17+3*(i-17)] - self.state[17+3*(j-17)]) ** 2 + (self.state[17+1+3*(i-17)] - self.state[17+1+3*(j-17)]) ** 2) > self.trans_range:
                     self.array_l[j-17][i - 18] = 0
@@ -1606,32 +1581,8 @@ class M4OEnv(gym.Env):
         self.state = self.data
 
         # computation of connectivity
-        self.array_S_0 = np.zeros(9)
-        self.array_S_1 = np.zeros(9)
-        self.array_S_2 = np.zeros(9)
-        self.array_S_3 = np.zeros(9)
-        self.array_S_4 = np.zeros(9)
-        self.array_S_5 = np.zeros(9)
-        self.array_S_6 = np.zeros(9)
-        self.array_S_7 = np.zeros(9)
-        self.array_S_8 = np.zeros(9)
-        self.array_S_9 = np.zeros(9)
-
-        self.array_l_0 = np.zeros(9)
-        self.array_l_1 = np.zeros(9)
-        self.array_l_2 = np.zeros(9)
-        self.array_l_3 = np.zeros(9)
-        self.array_l_4 = np.zeros(9)
-        self.array_l_5 = np.zeros(9)
-        self.array_l_6 = np.zeros(9)
-        self.array_l_7 = np.zeros(9)
-        self.array_l_8 = np.zeros(9)
-        self.array_l_9 = np.zeros(9)
-
-        self.array_S = [self.array_S_0, self.array_S_1, self.array_S_2, self.array_S_3, self.array_S_4,
-                        self.array_S_5, self.array_S_6, self.array_S_7, self.array_S_8, self.array_S_9]
-        self.array_l = [self.array_l_0, self.array_l_1, self.array_l_2, self.array_l_3, self.array_l_4,
-                        self.array_l_5, self.array_l_6, self.array_l_7, self.array_l_8, self.array_l_9]
+        self.array_S = [np.zeros(9) for _ in range(10)]
+        self.array_l = [np.zeros(9) for _ in range(10)]
 
         for j in range(17, 27):
             for i in range(j+1,27):
