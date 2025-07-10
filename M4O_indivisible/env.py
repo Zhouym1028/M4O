@@ -2560,7 +2560,7 @@ class M4OEnv(gym.Env):
                 c9_task_1 += t2
                 c9_trans_1 += (t2 / self.intensity) / (
                         self.bandWith * np.log2(
-                    1 + self.trans_power / ((self.array_S[1][7] ** self.trans_loss) * self.noise)))
+                    1 + self.trans_power / ((self.array_S[1][8] ** self.trans_loss) * self.noise)))
                 c9_exe_1 += c9_task_1 / c9
                 c9_delay_1 += c9_trans_1 + c9_exe_1
                 if c9_delay_1 > self.Array_l_1[6]:
