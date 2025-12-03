@@ -30,6 +30,8 @@ class M4OEnv(gym.Env):
         self.c1 = 8e8
         # CPU cycles of cv2
         self.c2 = 8e8
+        # economic loss per unit of delayed time
+        self.gt = 1
 
         # state for training
         self.data_lib = one_data
@@ -1494,9 +1496,25 @@ class M4OEnv(gym.Env):
         delay = max(c0_delay, c1_delay, c2_delay, c3_delay, c4_delay, c5_delay, c6_delay, c7_delay, c8_delay, c9_delay)
 
         # tatal cost of each timestep
-        cost = delay + self.wc*(c9_cost + c8_cost + c7_cost + c6_cost + c5_cost + c4_cost + c3_cost) + punish
+        delay_loss = delay * self.gt
+        cost = delay_loss + self.wc*(c9_cost + c8_cost + c7_cost + c6_cost + c5_cost + c4_cost + c3_cost) + punish
 
         return cost, delay
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1519,6 +1537,7 @@ class M4OEnv(gym.Env):
         self.c0 = 8e8
         self.c1 = 8e8
         self.c2 = 8e8
+        self.gt = 1
 
         self.data_lib = one_data
         self.data = np.array(self.data_lib[np.random.randint(0, np.array(self.data_lib).shape[0])])
@@ -2541,7 +2560,9 @@ class M4OEnv(gym.Env):
 
         delay = max(c0_delay, c1_delay, c2_delay, c3_delay, c4_delay, c5_delay, c6_delay, c7_delay, c8_delay, c9_delay)
 
-        cost = delay + self.wc*(c9_cost + c8_cost + c7_cost + c6_cost + c5_cost + c4_cost + c3_cost) + punish
+        delay_loss = delay * self.gt
+        cost = delay_loss + self.wc*(c9_cost + c8_cost + c7_cost + c6_cost + c5_cost + c4_cost + c3_cost) + punish
 
         return cost, delay
 '''
+
