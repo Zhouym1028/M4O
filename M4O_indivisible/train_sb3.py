@@ -46,7 +46,7 @@ def generate_flow_file():
 # start SUMO
 
 def start_sumo():
-    sumo_cmd = ["sumo", "-c", r"D:\SUMO\test\test.sumocfg", "--start", "--quit-on-end"]
+    sumo_cmd = ["sumo", "-c", r"D:\SUMO\m4o.sumocfg", "--start", "--quit-on-end"]
     traci.start(sumo_cmd)
 
 
@@ -110,3 +110,4 @@ model.learn(total_timesteps=100000)
 
 # close SUMO
 traci.close()
+
