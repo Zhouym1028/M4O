@@ -1,13 +1,17 @@
 import numpy as np
 import gym
+import math
 from gym import spaces
+import traci
 
 '''
 Environment for M4O-BO (OPT-BO)
 '''
 class M4OEnv(gym.Env):
-    def __init__(self,one_data):
+    def __init__(self,one_data, sumo_cfg="D:/SUMO/m4o.sumocfg"):
         super(M4OEnv, self).__init__()
+        # .sumocfg file
+        self.sumo_cfg = sumo_cfg
         # communication range
         self.trans_range = 300
         # transmission power
@@ -312,8 +316,13 @@ class M4OEnv(gym.Env):
         self.max_steps = 5
         self.max_time = 0
 
+    # refresh SUMO when an episode ends
+    def refresh_sumo(self):
+        traci.load(["-c", self.sumo_cfg])
+
     # reset when an apisode ends
     def reset(self):
+        self.refresh_sumo()
         self.step_count = 0
         i = np.random.randint(0,np.array(self.data_lib).shape[0])
         self.data = np.array(self.data_lib[i])
@@ -329,6 +338,9 @@ class M4OEnv(gym.Env):
         cost, delay = self._compute_cost(P_1, P_2, P_3)
         self.max_time = delay
         reward = -cost
+        # advance the SUMO simulation
+        for _ in range(math.ceil(delay)):
+            traci.simulationStep()
 
         done = self.step_count == self.max_steps
 
@@ -1524,8 +1536,9 @@ Environment for SH-BO
 
 '''
 class M4OEnv(gym.Env):
-    def __init__(self,one_data):
+    def __init__(self,one_data, sumo_cfg="D:/SUMO/m4o.sumocfg"):
         super(M4OEnv, self).__init__()
+        self.sumo_cfg = sumo_cfg
         self.trans_range = 300
         self.trans_power = 0.2
         self.trans_loss = 4
@@ -1814,7 +1827,11 @@ class M4OEnv(gym.Env):
         self.max_steps = 5
         self.max_time = 0
 
+    def refresh_sumo(self):
+        traci.load(["-c", self.sumo_cfg])
+
     def reset(self):
+        self.refresh_sumo()
         self.step_count = 0
         i = np.random.randint(0,np.array(self.data_lib).shape[0])
         self.data = np.array(self.data_lib[i])
@@ -1828,6 +1845,8 @@ class M4OEnv(gym.Env):
         cost, delay = self._compute_cost(P_1, P_2, P_3)
         self.max_time = delay
         reward = -cost
+        for _ in range(math.ceil(delay)):
+            traci.simulationStep()
         done = self.step_count == self.max_steps
 
         # update positions
@@ -2565,4 +2584,5 @@ class M4OEnv(gym.Env):
 
         return cost, delay
 '''
+
 
