@@ -8,14 +8,14 @@ from stable_baselines3 import A2C
 
 def generate_flow_file():
     import random
-    output_file = "flow_cross.rou.xml"
+    output_file = r"D:\SUMO\flow_cross.rou.xml"
 
     with open(output_file, "w", encoding="utf-8") as f:
         f.write('<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"\n')
         f.write('        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">\n\n')
-        f.write('    <vType id="yellowCar" accel="2.6" decel="4.5" sigma="2.0"\n')   # with a standard deviation of 2 m/s
+        f.write('    <vType id="yellowCar" accel="2.6" decel="4.5" sigma="0.5"\n')
         f.write('           length="4.5" minGap="0.1" maxSpeed="20" color="1,1,0" guiShape="passenger"/>\n\n')
-        f.write('    <vType id="redCar" accel="2.6" decel="4.5" sigma="2.0"\n')
+        f.write('    <vType id="redCar" accel="2.6" decel="4.5" sigma="0.5"\n')
         f.write('           length="4.5" minGap="0.1" maxSpeed="20" color="1,0,0" guiShape="passenger"/>\n\n')
 
         f.write(' <route id="right_to_left" edges="E1 -E2"/>\n')
@@ -26,7 +26,7 @@ def generate_flow_file():
         f.write('     <route refId="left_to_right" probability="0.5"/>\n')
         f.write(' </routeDistribution>\n\n')
 
-        # redCar - CV, yellowCar - SV）
+        # redCar - CV, yellowCar - SV
         for i in range(1, 11):
             if i <= 3:
                 v_type = "redCar"
@@ -81,7 +81,7 @@ def build_one_data(xs, ys, speeds):
     # computational intensity (1000)
     data_bit = [np.random.uniform(2.4e9, 4.8e9) for _ in range(10)]
     # change intensity here
-    # data_bit = [x * 3 for x in data_bit]
+    # data_bit = [x * 2 for x in data_bit]
 
     data_cpu = [np.random.uniform(1.2e9, 1.6e9) for _ in range(7)]
 
@@ -102,7 +102,7 @@ env = env.M4OEnv(one_data)
 model = A2C("MlpPolicy",
             env,
             learning_rate=5e-4,
-            tensorboard_log='sumo_test',
+            tensorboard_log='sumo_m4o',
             verbose=1)
 
 # training
@@ -110,5 +110,6 @@ model.learn(total_timesteps=100000)
 
 # close SUMO
 traci.close()
+
 
 
