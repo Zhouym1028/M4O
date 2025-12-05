@@ -2,12 +2,12 @@ import traci
 import time
 import numpy as np
 import env
+import random
 from stable_baselines3 import A2C
 
 # generate traffic flow file
 
 def generate_flow_file():
-    import random
     output_file = r"D:\SUMO\flow_cross.rou.xml"
 
     with open(output_file, "w", encoding="utf-8") as f:
@@ -110,6 +110,7 @@ model.learn(total_timesteps=100000)
 
 # close SUMO
 traci.close()
+
 
 
 
